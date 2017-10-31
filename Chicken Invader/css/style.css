@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+.text-center{
+	text-align: center;
+}
+
+body{
+	background-image: url('../img/background.jpg');
+	position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#ground{
+	background-image: url('../img/wood.jpg');
+	margin: auto;
+	width: 660px;
+	height: 660px;
+	margin-top: 50px;
+	border: 1px solid transparent;
+}
+#Arena{
+	background-image: url('../img/bg.jpg');
+	margin: 30px;
+}
