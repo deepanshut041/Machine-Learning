@@ -24,6 +24,10 @@ enron_data = pickle.load(open("../tools/final_project_dataset_unix.pkl", "rb"))
 print()
 print("Number of people dataset is available : " ,len(enron_data))
 print()
+k = 0
+for i in  enron_data:
+	print(i, k)
+	k = k + 1
 
 
 #Finding number of features for each people is available
