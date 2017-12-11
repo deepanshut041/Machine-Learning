@@ -78,17 +78,24 @@ except NameError:
     print("no predictions object named pred found, no clusters to plot")
 
 ## Finding maximum and minimum values taken by the “exercised_stock_options” feature used
-raw_data = []
-for i in finance_features:
-    raw_data.append((i[0], i[1], i[2]))
+# raw_data = []
+# for i in finance_features:
+#     raw_data.append((i[0], i[1], i[2]))
 
-for i in raw_data:
-    for j in range(0, len(raw_data) - 1, 1):
-        if raw_data[j][0] > raw_data[j + 1][0]:
-            temp = raw_data[j]
-            raw_data[j] = raw_data[j + 1]
-            raw_data[j + 1] = temp
-for i in raw_data:
-    print(i[0])
+# for i in raw_data:
+#     for j in range(0, len(raw_data) - 1, 1):
+#         if raw_data[j][0] > raw_data[j + 1][0]:
+#             temp = raw_data[j]
+#             raw_data[j] = raw_data[j + 1]
+#             raw_data[j + 1] = temp
+# for i in raw_data:
+#     print(i[0])
 
+# Using feature scaling for scaling data
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+
+scaler.fit(finance_features)
+
+print(scaler.transform([[200000, 1000000, 10000000]]))
 
