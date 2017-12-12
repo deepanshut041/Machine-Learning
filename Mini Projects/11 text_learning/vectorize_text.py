@@ -52,7 +52,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             stemmed_words = parseOutText(email)
             ### use str.replace() to remove any instances of the words
             ### ["sara", "shackleton", "chris", "germani"]
-            extra_words = ["sara", "shackleton", "chris", "germani"]
+            extra_words = ["sara", "shackleton", "chris", "germani", "sshacklensf", "cgermannsf"]
             for i in extra_words:
                 stemmed_words = stemmed_words.replace(i,"")
             ### append the text to word_data
@@ -84,5 +84,4 @@ uncleaned_words = tldf.get_feature_names()
 
 print(len(uncleaned_words))
 print(uncleaned_words[34597])
-print(uncleaned_words[34596])
-print(uncleaned_words[34598])
+print(uncleaned_words[33614])
