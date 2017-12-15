@@ -16,7 +16,7 @@ The dataset used in this example is a preprocessed excerpt of the
 
 
 
-print __doc__
+print(__doc__)
 
 from time import time
 import logging
@@ -37,7 +37,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 
 ###############################################################################
 # Download the data, if not already on disk and load it as numpy arrays
-lfw_people = fetch_lfw_people(min_faces_per_person=70, resize=0.4)
+lfw_people = fetch_lfw_people(data_home="E:/work/Machine-Learning/Mini Projects/lfw_funneled", min_faces_per_person=70, resize=0.4, download_if_missing=False)
 
 # introspect the images arrays to find the shapes (for plotting)
 n_samples, h, w = lfw_people.images.shape
@@ -72,6 +72,17 @@ print("Extracting the top %d eigenfaces from %d faces" % (n_components, X_train.
 t0 = time()
 pca = RandomizedPCA(n_components=n_components, whiten=True).fit(X_train)
 print("done in %0.3fs" % (time() - t0))
+
+# Printing the explained variance ratio
+print() 
+print(" Explained Variance Of Each PC")
+print()
+print("Number of pcas used : ", len(pca.explained_variance_ratio_))
+print()
+print("Variance expalined by first princpal component : ", pca.components_[0])
+print()
+print("Variance expalined by first princpal component : ", pca.components_[1])
+print()
 
 eigenfaces = pca.components_.reshape((n_components, h, w))
 
